@@ -7,7 +7,7 @@
 using System;
 public class Person
 {
-    private readonly string name;
+    private string name;
 
     public Person(string name)
     {
@@ -39,6 +39,7 @@ public class Program
 }
 
 */
+
 
 
 /*
@@ -91,14 +92,14 @@ class Program
 
 
 
-
+/*
 
 //OOP example with bank account creating
 
 using System;
 class BankAccount
 {
-    private decimal balance;
+    private decimal balance;                    //decalre private
     public BankAccount(decimal InitialBalance)
     {
         balance = InitialBalance;
@@ -147,4 +148,157 @@ class Program
 
     }
 }
+
+*/
+
+
+
+/*
+
+//Inheritance and Polymophism
+
+using System;
+class Employee                          //base class
+{
+    public string Name { get; set; }
+    public Employee(string name)
+    {
+        Name = name;
+    }
+
+    public virtual void Work()          //virtual method
+    {
+        Console.WriteLine($"{Name} is working.");
+    }
+}
+
+class Developer : Employee
+{
+    public Developer(string name) : base(name) { }
+
+    public override void Work()         //override base method
+    {
+        Console.WriteLine($"{Name} is developing softwares.");
+    }
+}
+
+class Driver : Employee
+{
+    public Driver(string name) : base(name) { }
+
+    public override void Work()
+    {
+        Console.WriteLine($"{Name} is driving truk car.");
+    }
+}
+
+class Program
+{
+    static void Main()
+    {
+        List<Employee> employees = new List<Employee>
+        {
+           new Employee("Mg Mg"),
+           new Developer("Kyaw Kyaw"),
+           new Driver("U Mya"),
+        };
+
+        foreach(var emp in employees)
+        {
+            emp.Work();
+        }
+    }
+}
+
+*/
+
+
+
+/*
+
+//Abstract 
+
+abstract class Animal       //abstract class
+{
+    public abstract void MakeSound();       // abstract method
+
+    public void Sleeping()
+    {
+        Console.WriteLine("Sleeping.....");
+    }
+}
+
+class Dog : Animal
+{
+    public override void MakeSound()
+    {
+        Console.WriteLine("Woof woof...");
+    }
+}
+
+class Program
+{
+    static void Main()
+    {
+        Animal myDog = new Dog();
+        myDog.MakeSound();      //Woof woof...
+        myDog.Sleeping();       //Sleeping.....
+    }
+}
+
+*/
+
+
+
+//LINQ
+
+using System;
+using System.Linq;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+
+class Program
+{
+    static void Main()
+    {
+        List<Employee> employees = new List<Employee>
+        {
+            new Employee{Name= "Mg mg", Age=28, Department="IT"},
+            new Employee{Name= "Su", Age=30, Department="IT"},
+            new Employee{Name= "Kyaw", Age=29, Department="IT"},
+            new Employee{Name= "Myo", Age=28, Department="HR"},
+            new Employee{Name= "Nyi", Age=30, Department="HR"},
+        };
+
+        var selectedEmployees = employees
+            .Where(emp => emp.Age > 28 && emp.Department == "IT")
+            .Select(emp => emp.Name)
+            .ToList();
+        Console.WriteLine("Here are selected employees : " + string.Join(", ", selectedEmployees));
+
+
+        //GroupBy
+        var selectedGroup = employees
+            .GroupBy(emp => emp.Department)
+            .Select(g => new { Department = g.Key, Employees = g.ToList() });
+
+        foreach(var group in selectedGroup)
+        {
+            Console.WriteLine($"Department is : {group.Department}");
+            foreach(var emp in group.Employees)
+            {
+                Console.WriteLine($" - {emp.Name}");
+            }
+        }
+    }
+}
+
+class Employee
+{    
+    public string Name { get; set; }
+    public int Age { get; set; }
+    public string Department { get; set; }
+}
+
+
 
