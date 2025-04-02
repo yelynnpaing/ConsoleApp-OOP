@@ -249,6 +249,7 @@ class Program
 */
 
 
+/*
 
 //LINQ
 
@@ -299,6 +300,38 @@ class Employee
     public int Age { get; set; }
     public string Department { get; set; }
 }
+
+*/
+
+
+
+/*
+
+//async & await 
+using System;
+using System.Threading.Tasks;
+
+class Program
+{
+    static async Task Main()
+    {
+        Console.WriteLine("Fetching data...");
+        Task<string> task1 = GetDataAsync("Task 1", 2000);
+        Task<string> task2 = GetDataAsync("Task 2", 1000);
+
+        var results = await Task.WhenAll(task1, task2);
+        Console.WriteLine($"Results : {string.Join(", ", results)}");
+
+
+        static async Task<string> GetDataAsync(string taskName, int delay)
+        {
+            await Task.Delay(delay);
+            return ($"{taskName} was completed.");
+        }
+    }
+}
+
+*/
 
 
 
