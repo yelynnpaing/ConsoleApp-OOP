@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp( OOP )", "Consol
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleLibraryManagementSystem (OOP)", "SimpleLibraryManagementSystem (OOP)\SimpleLibraryManagementSystem (OOP).csproj", "{F39E624E-1A1C-4CD3-99FC-921F97F7C55E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LINQExamples", "LINQExamples\LINQExamples.csproj", "{FE2A71C7-A67A-4EA2-BCE6-3CA606D7E448}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{F39E624E-1A1C-4CD3-99FC-921F97F7C55E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F39E624E-1A1C-4CD3-99FC-921F97F7C55E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F39E624E-1A1C-4CD3-99FC-921F97F7C55E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FE2A71C7-A67A-4EA2-BCE6-3CA606D7E448}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE2A71C7-A67A-4EA2-BCE6-3CA606D7E448}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE2A71C7-A67A-4EA2-BCE6-3CA606D7E448}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE2A71C7-A67A-4EA2-BCE6-3CA606D7E448}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
